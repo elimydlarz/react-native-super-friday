@@ -1,1 +1,1 @@
-# React Native Fun
+# React Native Super Friday
