@@ -1,16 +1,35 @@
-import React from 'react';
-import { ScrollView, Text } from 'react-native';
+import React, { Component } from 'react';
+import { ScrollView, Text, TextInput } from 'react-native';
 
-const component = () => (
-  <ScrollView>
-    <Text style={{ fontSize: 20 }}>
-      Sweet Form Bro
-    </Text>
-  </ScrollView>
-);
+export default class extends Component {
+  static navigationOptions = {
+    title: 'Form',
+  }
 
-component.navigationOptions = {
-  title: 'Formy Formperson',
-};
+  constructor() {
+    super();
 
-export default component;
+    this.state = {
+      name: '',
+    };
+  }
+
+  nameEntered() {
+    return this.state.name.length > 0;
+  }
+
+  render() {
+    return (
+      <ScrollView>
+        <TextInput
+          style={{ height: 50, borderWidth: 1 }}
+          onChangeText={name => this.setState({ name })}
+          value={this.state.name}
+        />
+        <Text style={{ fontSize: 20 }}>
+          {this.nameEntered() && `Hello ${this.state.name}!`}
+        </Text>
+      </ScrollView>
+    );
+  }
+}
