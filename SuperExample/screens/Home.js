@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 const styles = {
   container: {
@@ -20,7 +20,7 @@ const styles = {
   },
 };
 
-const component = () => (
+const component = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
       Welcome to React Native!
@@ -32,6 +32,10 @@ const component = () => (
       Double tap R on your keyboard to reload,{'\n'}
       Shake or press menu button for dev menu
     </Text>
+    <Button
+      title="Form!"
+      onPress={() => navigation.navigate('Form')}
+    />
   </View>
 );
 
