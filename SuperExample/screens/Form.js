@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 
 import Field from '../components/Field';
 
@@ -22,7 +22,7 @@ export default class extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <Text style={{ fontSize: 20, padding: 10 }}>
           {this.nameEntered()
             ? `Hello ${this.state.name}!`
@@ -83,7 +83,7 @@ export default class extends Component {
           updater={value => this.setState({ dadsDadsDadsDadsDadsDadsName: value })}
           value={this.state.dadsDadsDadsDadsDadsDadsName}
         />
-      </View>
+      </ScrollView>
     );
   }
 }
