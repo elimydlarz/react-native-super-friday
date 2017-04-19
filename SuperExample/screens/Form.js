@@ -23,7 +23,11 @@ export default class extends Component {
   render() {
     return (
       <ScrollView>
-        <Field label="Please enter your name" />
+        <Field
+          label="Please enter your name"
+          updater={value => this.setState({ name: value })}
+          value={this.state.name}
+        />
         <Text style={{ fontSize: 20 }}>
           {this.nameEntered()
             ? `Hello ${this.state.name}!`
