@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text } from 'react-native';
+import { ScrollView, Text, View, Button } from 'react-native';
 
 import Field from '../components/Field';
 
@@ -38,51 +38,28 @@ export default class extends Component {
           updater={value => this.setState({ number: value })}
           value={this.state.number}
         />
-        <Field
-          label="Please enter your address"
-          updater={value => this.setState({ address: value })}
-          value={this.state.address}
-        />
-        <Field
-          label="Please enter your email"
-          updater={value => this.setState({ email: value })}
-          value={this.state.email}
-        />
-        <Field
-          label="Please enter your post code"
-          updater={value => this.setState({ postCode: value })}
-          value={this.state.postCode}
-        />
-        <Field
-          label="Please enter your dad's name"
-          updater={value => this.setState({ dadsName: value })}
-          value={this.state.dadsName}
-        />
-        <Field
-          label="Please enter your dad's dad's name"
-          updater={value => this.setState({ dadsDadsName: value })}
-          value={this.state.dadsDadsName}
-        />
-        <Field
-          label="Please enter your dad's dad's dad's name"
-          updater={value => this.setState({ dadsDadsDadsName: value })}
-          value={this.state.dadsDadsDadsName}
-        />
-        <Field
-          label="Please enter your dad's dad's dad's dad's dad's name"
-          updater={value => this.setState({ dadsDadsDadsDadsName: value })}
-          value={this.state.dadsDadsDadsDadsName}
-        />
-        <Field
-          label="Please enter your dad's dad's dad's dad's dad's dad's name"
-          updater={value => this.setState({ dadsDadsDadsDadsDadsName: value })}
-          value={this.state.dadsDadsDadsDadsDadsName}
-        />
-        <Field
-          label="Please enter your dad's dad's dad's dad's dad's dad's dad's name"
-          updater={value => this.setState({ dadsDadsDadsDadsDadsDadsName: value })}
-          value={this.state.dadsDadsDadsDadsDadsDadsName}
-        />
+        <View style={{ flex: 100, flexDirection: 'row', justifyContent: 'space-between', flexWrap: 'wrap' }}>
+          <Button
+            style={{ flex: 50 }}
+            title="Fairly Big Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={{ flex: 50 }}
+            title="Another Big Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={{ flex: 50 }}
+            title="Yet Another Big Button"
+            onPress={() => {}}
+          />
+          <Button
+            style={{ flex: 50 }}
+            title="Final Big Button"
+            onPress={() => {}}
+          />
+        </View>
       </ScrollView>
     );
   }
