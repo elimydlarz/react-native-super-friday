@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View, Button } from 'react-native';
+import { RefreshControl, ScrollView, Text, View, Button } from 'react-native';
 import Swiper from 'react-native-swiper';
 
 import Field from '../components/Field';
@@ -14,7 +14,18 @@ export default class extends Component {
 
     this.state = {
       name: '',
+      refreshing: false,
+      refreshCounter: 0,
     };
+
+    this.onRefresh = this.onRefresh.bind(this);
+  }
+
+  onRefresh() {
+    this.setState({ refreshing: true });
+    setTimeout(() => {
+      this.setState({ refreshing: false, refreshCounter: this.state.refreshCounter + 1 });
+    }, 1000);
   }
 
   nameEntered() {
@@ -23,9 +34,19 @@ export default class extends Component {
 
   render() {
     return (
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this.onRefresh}
+          />
+        }
+      >
         <Swiper height={500}>
           <View>
+            <Text>
+              Refreshed {this.state.refreshCounter} times
+            </Text>
             <Text style={{ fontSize: 20, padding: 10 }}>
               {this.nameEntered()
                 ? `Hello ${this.state.name}!`
