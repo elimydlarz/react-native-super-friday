@@ -18,6 +18,7 @@ exports[`Field 1`] = `
     onChangeText={[Function]}
     style={
       Object {
+        "borderColor": "black",
         "borderWidth": 1,
         "height": 50,
       }

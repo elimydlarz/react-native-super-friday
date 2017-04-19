@@ -34,6 +34,7 @@ export default class extends Component {
           value={this.state.name}
         />
         <Field
+          inputStyle={{ borderColor: 'red' }}
           label="Please enter your number"
           updater={value => this.setState({ number: value })}
           value={this.state.number}
