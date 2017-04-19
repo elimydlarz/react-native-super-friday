@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import app from './app';
+import App from './app';
 
 const index = () => <App />;
 
