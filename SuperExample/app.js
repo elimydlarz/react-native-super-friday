@@ -1,5 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import {
+  View,
+  Text,
+  AppRegistry,
+} from 'react-native';
 
 const styles = {
   container: {
@@ -20,7 +24,7 @@ const styles = {
   },
 };
 
-export default () => (
+const app = () => (
   <View style={styles.container}>
     <Text style={styles.welcome}>
       Welcome to React Native!
@@ -34,3 +38,5 @@ export default () => (
     </Text>
   </View>
 );
+
+AppRegistry.registerComponent('SuperExample', () => app);
