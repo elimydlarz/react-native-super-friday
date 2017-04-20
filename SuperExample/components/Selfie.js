@@ -13,17 +13,17 @@ export default class component extends Component {
   }
 
   render() {
-    const { source } = this.props;
+    const { source, size = 100 } = this.props;
     const borderColor = COLOURS[this.state.vote];
 
     return (
-      <View style={{ margin: 5 }}>
+      <View style={{ alignSelf: 'center', margin: 5 }}>
         <Image
-          style={{ borderColor, borderWidth: 2, width: 100, height: 100 }}
+          style={{ borderColor, borderWidth: 2, width: size, height: size }}
           resizeMode="cover"
           source={source}
         />
-        <View style={{ width: 100, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <View style={{ width: size, flexDirection: 'row', justifyContent: 'space-between' }}>
           <Button
             color={COLOURS.LIKED}
             title="+"

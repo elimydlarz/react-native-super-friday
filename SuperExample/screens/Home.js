@@ -16,6 +16,10 @@ const component = ({ navigation }) => (
       title="Gallery"
       onPress={() => navigation.navigate('Gallery')}
     />
+    <Button
+      title="Flipbook"
+      onPress={() => navigation.navigate('Flipbook')}
+    />
   </View>
 );
 
