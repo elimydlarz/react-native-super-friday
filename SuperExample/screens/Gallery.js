@@ -1,41 +1,26 @@
 import React from 'react';
 import {
   View,
-  Image,
 } from 'react-native';
 
 import photo from '../images/undertaker.jpg';
+import Selfie from '../components/Selfie';
 
 const component = () => (
   <View
     style={{
       padding: 10,
-      flex: 9,
+      flex: 1,
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'center',
     }}
   >
-    <Image
-      style={{ width: 100, height: 100, margin: 5 }}
-      resizeMode="cover"
-      source={photo}
-    />
-    <Image
-      style={{ width: 100, height: 100, margin: 5 }}
-      resizeMode="cover"
-      source={photo}
-    />
-    <Image
-      style={{ width: 100, height: 100, margin: 5 }}
-      resizeMode="cover"
-      source={photo}
-    />
-    <Image
-      style={{ width: 100, height: 100, margin: 5 }}
-      resizeMode="cover"
-      source={photo}
-    />
+    <Selfie source={photo} />
+    <Selfie source={photo} />
+    <Selfie source={photo} />
+    <Selfie source={photo} />
+    <Selfie source={photo} />
   </View>
 );
 
