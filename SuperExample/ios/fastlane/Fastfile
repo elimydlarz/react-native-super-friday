@@ -1,0 +1,15 @@
+fastlane_version "1.111.0"
+
+default_platform :ios
+
+platform :ios do
+  lane :beta do
+    match(type: "appstore", git_url: "git@github.com:elimydlarz/TestProjectCertificates.git") # more information: https://codesigning.guide
+    gym(scheme: "SuperExample") # Build your app - more options available
+    testflight(skip_waiting_for_build_processing: true)
+    # pilot
+
+    # sh "your_script.sh"
+    # You can also use other beta testing services here (run `fastlane actions`)
+  end
+end
