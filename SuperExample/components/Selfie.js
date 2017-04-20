@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Image, Button } from 'react-native';
+import { View, Image, Button, AsyncStorage } from 'react-native';
 
 const COLOURS = {
   NEUTRAL: 'black',
@@ -8,8 +8,27 @@ const COLOURS = {
 };
 
 export default class component extends Component {
+  constructor(props) {
+    super(props);
+
+    this.loadVote = this.loadVote.bind(this);
+    this.saveVote = this.saveVote.bind(this);
+
+    this.loadVote();
+  }
+
   state = {
     vote: 'NEUTRAL',
+  }
+
+  async loadVote() {
+    const vote = await AsyncStorage.getItem(`@super-friday:${this.props.name}`);
+    this.setState({ vote });
+  }
+
+  async saveVote(vote) {
+    await AsyncStorage.setItem(`@super-friday:${this.props.name}`, vote);
+    this.setState({ vote });
   }
 
   render() {
@@ -27,12 +46,12 @@ export default class component extends Component {
           <Button
             color={COLOURS.LIKED}
             title="+"
-            onPress={() => this.setState({ vote: 'LIKED' })}
+            onPress={() => this.saveVote('LIKED')}
           />
           <Button
             color={COLOURS.DISLIKED}
             title="-"
-            onPress={() => this.setState({ vote: 'DISLIKED' })}
+            onPress={() => this.saveVote('DISLIKED')}
           />
         </View>
       </View>

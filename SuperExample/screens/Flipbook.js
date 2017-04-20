@@ -7,11 +7,11 @@ import photo from '../images/undertaker.jpg';
 
 const component = () => (
   <Swiper showsButtons>
-    <Selfie size={300} source={photo} />
-    <Selfie size={300} source={photo} />
-    <Selfie size={300} source={photo} />
-    <Selfie size={300} source={photo} />
-    <Selfie size={300} source={photo} />
+    <Selfie name="a" size={300} source={photo} />
+    <Selfie name="b" size={300} source={photo} />
+    <Selfie name="c" size={300} source={photo} />
+    <Selfie name="d" size={300} source={photo} />
+    <Selfie name="e" size={300} source={photo} />
   </Swiper>
 );
 

@@ -16,11 +16,11 @@ const component = () => (
       justifyContent: 'center',
     }}
   >
-    <Selfie source={photo} />
-    <Selfie source={photo} />
-    <Selfie source={photo} />
-    <Selfie source={photo} />
-    <Selfie source={photo} />
+    <Selfie name="a" source={photo} />
+    <Selfie name="b" source={photo} />
+    <Selfie name="c" source={photo} />
+    <Selfie name="d" source={photo} />
+    <Selfie name="e" source={photo} />
   </View>
 );
 
