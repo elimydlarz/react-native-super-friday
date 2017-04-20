@@ -5,9 +5,11 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 import Home from './screens/Home';
+import Gallery from './screens/Gallery';
 
 const app = StackNavigator({
   Home: { screen: Home },
+  Gallery: { screen: Gallery },
 });
 
 export default app;
